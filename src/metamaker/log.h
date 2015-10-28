@@ -16,10 +16,13 @@ This file contains functions for writing log file of .dll's state.
 #define METAMAKER_DARKOMEN_LOG
 
 #include <ostream>
+#include <memory>
 
 namespace darkomen_log
 {
-	std::ostream& OpenLog();
+	typedef std::auto_ptr<std::ostream> log_ptr_type;
+
+	log_ptr_type OpenLog();
 }
 
 #endif // METAMAKER_DARKOMEN_PATHS

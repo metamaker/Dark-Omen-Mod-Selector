@@ -94,7 +94,7 @@
 			IntermediateDirectory="$(ConfigurationName)"
 			ConfigurationType="2"
 			UseOfMFC="0"
-			CharacterSet="0"
+			CharacterSet="2"
 			WholeProgramOptimization="0"
 			>
 			<Tool
@@ -114,18 +114,20 @@
 			/>
 			<Tool
 				Name="VCCLCompilerTool"
-				Optimization="1"
+				Optimization="0"
+				EnableIntrinsicFunctions="false"
 				FavorSizeOrSpeed="2"
 				PreprocessorDefinitions="WIN32;NDEBUG;_WINDOWS;_USRDLL;PROXY_DLL_EXPORTS;_DLL"
 				StringPooling="true"
-				ExceptionHandling="0"
+				ExceptionHandling="1"
 				RuntimeLibrary="0"
 				BufferSecurityCheck="false"
 				EnableFunctionLevelLinking="true"
-				TreatWChar_tAsBuiltInType="true"
+				TreatWChar_tAsBuiltInType="false"
 				RuntimeTypeInfo="false"
 				UsePrecompiledHeader="0"
 				WarningLevel="4"
+				DebugInformationFormat="3"
 				UndefineAllPreprocessorDefinitions="false"
 			/>
 			<Tool
@@ -139,12 +141,13 @@
 			/>
 			<Tool
 				Name="VCLinkerTool"
-				OutputFile="$(OutDir)\ddraw.dll"
+				AdditionalDependencies="MSVCRT.lib MSVCPRT.lib"
+				OutputFile="G:\Dark Omen\PRG_ENG\ddraw.dll"
 				LinkIncremental="1"
-				GenerateManifest="false"
-				IgnoreAllDefaultLibraries="true"
+				GenerateManifest="true"
+				IgnoreAllDefaultLibraries="false"
 				ModuleDefinitionFile="exports.def"
-				GenerateDebugInformation="false"
+				GenerateDebugInformation="true"
 				SubSystem="2"
 				OptimizeReferences="2"
 				EnableCOMDATFolding="2"
@@ -292,13 +295,6 @@
 			<File
 				RelativePath=".\metamaker\log.cpp"
 				>
-				<FileConfiguration
-					Name="Release|Win32"
-					>
-					<Tool
-						Name="VCCLCompilerTool"
-					/>
-				</FileConfiguration>
 			</File>
 			<File
 				RelativePath=".\metamaker\log.h"
@@ -314,13 +310,6 @@
 			<File
 				RelativePath=".\metamaker\paths.cpp"
 				>
-				<FileConfiguration
-					Name="Release|Win32"
-					>
-					<Tool
-						Name="VCCLCompilerTool"
-					/>
-				</FileConfiguration>
 			</File>
 			<File
 				RelativePath=".\metamaker\paths.h"

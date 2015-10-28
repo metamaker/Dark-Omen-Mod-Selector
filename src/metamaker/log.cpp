@@ -7,10 +7,11 @@ using std::ofstream;
 
 namespace darkomen_log
 {
-	std::ostream& darkomen_log::OpenLog()
+	log_ptr_type darkomen_log::OpenLog()
 	{
-		ofstream out(darkomen_paths::GetPathToLogFile(), ofstream::out | ofstream::app);
-
-		return out;
+		ofstream *log = new ofstream(darkomen_paths::GetPathToLogFile(),
+			ofstream::out | ofstream::app);
+	
+		return log_ptr_type(log);
 	}
 }

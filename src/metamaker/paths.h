@@ -15,10 +15,12 @@ This file contains functions which return paths to modification files (like xslo
 #ifndef METAMAKER_DARKOMEN_PATHS
 #define METAMAKER_DARKOMEN_PATHS
 
+#include <string>
+
 namespace darkomen_paths
 {
 	// absolute path to xslots.txt
-	const char* GetPathToXSlotsFile();
+	std::string GetPathToXSlotsFile();
 
 	// absolute path to log file
 	const char* GetPathToLogFile();

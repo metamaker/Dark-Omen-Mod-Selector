@@ -19,25 +19,13 @@ namespace darkomen_paths
 		return darkomenFolderWithExe;
 	}
 
-	const char* GetPathToXSlotsFile()
+	std::string GetPathToXSlotsFile()
 	{
-		static string path;
-
-		if (path.empty()) {
-			path = GetAbsolutePathToFolderWithEXE() + "\\xslots.txt";
-		}
-
-		return path.c_str();
+		return GetAbsolutePathToFolderWithEXE() + "\\xslots.txt";
 	}
 
 	const char* GetPathToLogFile()
 	{
-		static string path;
-
-		if (path.empty()) {
-			path = GetAbsolutePathToFolderWithEXE() + "\\..\\gamelog.txt";
-		}
-
-		return path.c_str();
+		return "G:\\Dark Omen\\PRG_ENG\\gamelog.txt";
 	}
 }

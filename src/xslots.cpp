@@ -214,12 +214,11 @@ namespace xslots
 	void Load()
 	{
 		// parse text file
-		/*const char *path = darkomen_paths::GetPathToXSlotsFile();
+		std::string pathStringObject = darkomen_paths::GetPathToXSlotsFile();
+		const char *path = pathStringObject.c_str();
 
-		std::ostream& log = darkomen_log::OpenLog();
-		log << "Path to xslots.txt: " << path << std::endl;*/
-
-		const char *path = "xslots.txt";
+		//darkomen_log::log_ptr_type pointerToLog = darkomen_log::OpenLog();
+		//*pointerToLog << "Path to xslots.txt: " << path << std::endl;
 
 		if( 0xFFFFFFFF == GetFileAttributes( path ) ) return;
 		char* readbuf = ReadInFile( path );
