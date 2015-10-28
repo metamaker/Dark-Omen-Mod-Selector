@@ -4,6 +4,9 @@
 // hooks should play nice with mixed_magic hooks
 #include "header.h"
 
+#include "metamaker/paths.h"
+#include "metamaker/log.h"
+
 namespace xslots
 {
 	struct SPRITE_SLOT
@@ -210,9 +213,14 @@ namespace xslots
 
 	void Load()
 	{
-		
 		// parse text file
-		const char path[] = { "xslots.txt" };
+		/*const char *path = darkomen_paths::GetPathToXSlotsFile();
+
+		std::ostream& log = darkomen_log::OpenLog();
+		log << "Path to xslots.txt: " << path << std::endl;*/
+
+		const char *path = "xslots.txt";
+
 		if( 0xFFFFFFFF == GetFileAttributes( path ) ) return;
 		char* readbuf = ReadInFile( path );
 		if( readbuf == NULL ) return;		
